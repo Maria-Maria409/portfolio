@@ -6,13 +6,7 @@ import "./styles/main.css";
 import { createI18n } from "vue-i18n";
 import en from "./locales/en.json";
 
-const i18n = createI18n({
-  locale: "en",
-  fallbackLocale: "en",
-  messages: {
-    en: en,
-  },
-});
+createApp(App).use(i18n).mount("#app");
 
 const app = createApp(App);
 
