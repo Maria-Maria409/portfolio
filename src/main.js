@@ -1,13 +1,9 @@
 import { createApp } from "vue";
 import App from "./App.vue";
+
+import { i18n } from "./locales/index";
 import vuetify from "./plugins/vuetify";
 import router from "./router";
-import "./styles/main.css";
-import { createI18n } from "vue-i18n";
-import en from "./locales/en.json";
-import { i18n } from "./locales/index.js";
-
-createApp(App).use(i18n).mount("#app");
 
 const app = createApp(App);
 
