@@ -5,6 +5,7 @@ import en from "./en.json";
 export const i18n = createI18n({
   legacy: false,
   locale: "en",
+  globalInjection: true,
   fallbackLocale: "en",
   messages: {
     en,
