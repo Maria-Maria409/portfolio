@@ -210,13 +210,13 @@
 import { ref } from 'vue'
 
 // Import images for each project
-import bsc01 from '@/assets/images/Mariam-Soudeni/BSC-APP/BSC01.PNG'
-import bsc02 from '@/assets/images/Mariam-Soudeni/BSC-APP/BSC02.PNG'
-import bsc03 from '@/assets/images/Mariam-Soudeni/BSC-APP/BSC03.PNG'
-import bsc04 from '@/assets/images/Mariam-Soudeni/BSC-APP/BSC04.PNG'
-import bsc05 from '@/assets/images/Mariam-Soudeni/BSC-APP/BSC05.PNG'
-import bsc06 from '@/assets/images/Mariam-Soudeni/BSC-APP/BSC06.PNG'
-import bsc07 from '@/assets/images/Mariam-Soudeni/BSC-APP/BSC07.PNG'
+import bsc01 from '@/assets/images/Mariam-Soudeni/BSC-APP/BSC01.png'
+import bsc02 from '@/assets/images/Mariam-Soudeni/BSC-APP/BSC02.png'
+import bsc03 from '@/assets/images/Mariam-Soudeni/BSC-APP/BSC03.png'
+import bsc04 from '@/assets/images/Mariam-Soudeni/BSC-APP/BSC04.png'
+import bsc05 from '@/assets/images/Mariam-Soudeni/BSC-APP/BSC05.png'
+import bsc06 from '@/assets/images/Mariam-Soudeni/BSC-APP/BSC06.png'
+import bsc07 from '@/assets/images/Mariam-Soudeni/BSC-APP/BSC07.png'
 
 import hnb00 from '@/assets/images/Mariam-Soudeni/HNB-APP/HNB-APP00.png'
 import hnb01 from '@/assets/images/Mariam-Soudeni/HNB-APP/HNB-APP01.png'
