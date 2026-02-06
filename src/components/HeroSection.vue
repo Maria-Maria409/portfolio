@@ -17,6 +17,10 @@
         <v-btn color="primary" rounded="xl" class="px-6" @click="$emit('navigate', 'portfolio')">
           View Portfolio
         </v-btn>
+        <v-btn variant="outlined" color="primary" rounded="xl" class="px-6" @click="downloadCV">
+          <v-icon start>mdi-download</v-icon>
+          Download CV
+        </v-btn>
         <v-btn variant="outlined" color="primary" rounded="xl" class="px-6" @click="$emit('navigate', 'contact')">
           Contact Me
         </v-btn>
@@ -36,6 +40,15 @@ const props = defineProps({
 const emit = defineEmits(['navigate'])
 
 const vantaRef = ref(null)
+
+const downloadCV = () => {
+  const link = document.createElement('a')
+  link.href = '/Mariam-Soudani-Resume-EN.pdf'
+  link.download = 'Mariam-Soudani-Resume-EN.pdf'
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
 
 onMounted(async () => {
   window.THREE = THREE

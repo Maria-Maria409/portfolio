@@ -10,7 +10,6 @@
 /* === LINE ELEMENT === */
 .line {
   border-right: 5px solid;
-  border-bottom: 5px solid;
   border-top: 0;
   border-left: 0;
   border-image-source: linear-gradient(62deg, #6366f1 0%, #ec4899 100%);
@@ -18,7 +17,7 @@
   position: relative;
   height: 40px;
   margin-top: 30px;
-  left: 18.5%;
+  left: 24%;
   right: 1.2%;
   width: 60%;
 }

@@ -368,6 +368,7 @@ const openProject = (project) => {
 
 .project-carousel {
   background-color: #000;
+  height:600px !important;
 }
 
 .project-carousel :deep(.v-carousel__controls) {

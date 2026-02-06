@@ -44,7 +44,7 @@
             <h3 class="text-h5 font-weight-bold mb-6">Send me a message</h3>
             <v-form ref="form" v-model="valid" @submit.prevent="submitForm">
               <v-text-field
-                v-model="form.name"
+                v-model="name"
                 label="Name"
                 prepend-inner-icon="mdi-account"
                 variant="outlined"
@@ -53,7 +53,7 @@
               ></v-text-field>
 
               <v-text-field
-                v-model="form.email"
+                v-model="email"
                 label="Email"
                 prepend-inner-icon="mdi-email"
                 variant="outlined"
@@ -63,7 +63,7 @@
               ></v-text-field>
 
               <v-text-field
-                v-model="form.subject"
+                v-model="subject"
                 label="Subject"
                 prepend-inner-icon="mdi-email-outline"
                 variant="outlined"
@@ -72,7 +72,7 @@
               ></v-text-field>
 
               <v-textarea
-                v-model="form.message"
+                v-model="message"
                 label="Message"
                 prepend-inner-icon="mdi-message-text"
                 variant="outlined"
@@ -107,7 +107,8 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref } from 'vue'
+import emailjs from '@emailjs/browser'
 
 const valid = ref(false)
 const loading = ref(false)
@@ -115,12 +116,10 @@ const snackbar = ref(false)
 const snackbarText = ref('')
 const snackbarColor = ref('success')
 
-const form = reactive({
-  name: '',
-  email: '',
-  subject: '',
-  message: '',
-})
+const name = ref('')
+const email = ref('')
+const subject = ref('')
+const message = ref('')
 
 const rules = {
   required: (value) => !!value || 'This field is required',
@@ -158,22 +157,42 @@ const contactInfo = [
 ]
 
 const submitForm = async () => {
-  if (valid.value) {
-    loading.value = true
-    
-    // Simulate API call
-    setTimeout(() => {
-      loading.value = false
-      snackbarText.value = 'Message sent successfully! I will get back to you soon.'
-      snackbarColor.value = 'success'
-      snackbar.value = true
-      
-      // Reset form
-      form.name = ''
-      form.email = ''
-      form.subject = ''
-      form.message = ''
-    }, 1500)
+  if (!valid.value) return
+
+  loading.value = true
+
+  try {
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID 
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+    await emailjs.send(
+      serviceId,
+      templateId,
+      {
+        name: name.value,
+        email: email.value,
+        subject: subject.value,
+        message: message.value,
+      },
+      { publicKey }
+    )
+
+    snackbarText.value = 'Message sent successfully! I will get back to you soon.'
+    snackbarColor.value = 'success'
+    snackbar.value = true
+
+    name.value = ''
+    email.value = ''
+    subject.value = ''
+    message.value = ''
+  } catch (error) {
+    console.error('EmailJS Error:', error)
+    snackbarText.value = 'Failed to send message. Please try again later.'
+    snackbarColor.value = 'error'
+    snackbar.value = true
+  } finally {
+    loading.value = false
   }
 }
 </script>

@@ -7,66 +7,73 @@
           My professional journey and career milestones
         </p>
       </div>
-      <div class="custom-timeline">
-        <div
+      
+      <v-row class="experience-section">
+        <v-col
           v-for="(experience, index) in experiences"
           :key="experience.id"
-          class="timeline-item d-flex"
+          cols="12"
+          class="experience-item"
         >
-          <div class="timeline-marker">
-            <span class="timeline-dot"></span>
-          </div>
+          <div class="experience-container">
+            <div class="experience-icon">
+             <!--  <v-avatar size="64" color="primary">
+                <v-icon size="32">mdi-briefcase</v-icon>
+              </v-avatar> -->
+            </div>
 
-          <v-card
-            class="experience-card pa-6"
-            elevation="4"
-            :color="index % 2 === 0 ? 'surface' : 'surface-variant'"
-          >
-            <div class="d-flex justify-space-between align-start mb-4">
-              <div>
-                <h3 class="text-h5 font-weight-bold mb-2">
-                  {{ experience.position }}
-                </h3>
-                <h4 class="text-h6 text-primary mb-2">
-                  {{ experience.company }}
-                </h4>
+            <v-card
+              class="experience-card pa-6 flex-grow-1"
+              elevation="4"
+              :color="index % 2 === 0 ? 'surface' : 'surface-variant'"
+            >
+              <div class="d-flex justify-space-between align-start mb-4">
+                <div class="flex-grow-1">
+                  <h3 class="text-h5 font-weight-bold mb-2">
+                    {{ experience.position }}
+                  </h3>
+                  <h4 class="text-h6 text-primary mb-2">
+                    {{ experience.company }}
+                  </h4>
+                  <div class="d-flex gap-2 mb-2">
+                    <v-chip
+                      size="small"
+                      color="primary"
+                      variant="flat"
+                    >
+                      {{ experience.period }}
+                    </v-chip>
+                    <v-chip
+                      v-if="experience.type"
+                      size="small"
+                      color="secondary"
+                      variant="flat"
+                    >
+                      {{ experience.type }}
+                    </v-chip>
+                  </div>
+                </div>
+              </div>
+
+              <p
+                class="text-body-1 mb-4"
+                v-html="experience.description"
+              ></p>
+
+              <div class="d-flex flex-wrap ga-2">
                 <v-chip
+                  v-for="tech in experience.technologies"
+                  :key="tech"
                   size="small"
-                  color="primary"
-                  variant="flat"
-                  class="mr-2"
+                  variant="outlined"
                 >
-                  {{ experience.period }}
-                </v-chip>
-                <v-chip
-                  v-if="experience.type"
-                  size="small"
-                  color="secondary"
-                  variant="flat"
-                >
-                  {{ experience.type }}
+                  {{ tech }}
                 </v-chip>
               </div>
-            </div>
-
-            <p
-              class="text-body-1 mb-4"
-              v-html="experience.description"
-            ></p>
-
-            <div class="d-flex flex-wrap ga-2">
-              <v-chip
-                v-for="tech in experience.technologies"
-                :key="tech"
-                size="small"
-                variant="outlined"
-              >
-                {{ tech }}
-              </v-chip>
-            </div>
-          </v-card>
-        </div>
-      </div>
+            </v-card>
+          </div>
+        </v-col>
+      </v-row>
     </v-container>
   </v-container>
 </template>
@@ -104,61 +111,125 @@ const experiences = [
 </script>
 
 <style scoped>
-.custom-timeline {
-  position: relative;
-  margin: 0 auto;
-  max-width: 1000px;
-  padding-left: 48px;
+.experience-item {
+  display: flex;
+  align-items: flex-start;
 }
 
-.custom-timeline::before {
-  content: '';
-  position: absolute;
-  left: 18px;
-  top: -220px;
-  bottom: 0;
-  width: 5px;
-  background: linear-gradient(180deg, #6366f1 0%, #ec4899 100%);
-}
-
-.timeline-item {
-  position: relative;
+.experience-container {
+  display: flex;
   align-items: flex-start;
   gap: 16px;
-  margin-bottom: 32px;
-/*   padding-left: 32px;
- */
+  width: 100%;
 }
-
-.timeline-marker {
+.experience-section {
   position: relative;
-  width: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  left: -40px;
+  
 }
-
-.timeline-dot {
-  position: relative;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #6366f1;
-  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
-  z-index: 1;
+.experience-icon {
+  flex-shrink: 0;
+  margin-top: 8px;
 }
 
 .experience-card {
-  border-radius: 10px;
+  border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: min(900px, 100%); /* fixed card width while staying responsive */
-
+  width: 100%;
 }
 
 .experience-card:hover {
-  transform: translateX(10px);
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 960px) {
+  .experience-container {
+    gap: 12px;
+  }
+
+  .experience-section {
+    left: 0;
+  }
+
+  .experience-icon {
+    margin-top: 4px;
+  }
+
+  .experience-card {
+    padding: 16px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .experience-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .experience-icon {
+    margin-top: 0;
+  }
+
+  .experience-card {
+    padding: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-icon :deep(.v-avatar) {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .experience-icon :deep(.v-icon) {
+    font-size: 24px !important;
+  }
+
+  .experience-card {
+    padding: 12px !important;
+  }
+
+  .experience-card :deep(.text-h5) {
+    font-size: 1.1rem !important;
+  }
+}
+
+.section-container {
+  border-top: solid;
+  border-left: solid;
+  border-color: white;
+  border-width: thick;
+  max-width: 68%;
+  border-image-source: linear-gradient(62deg, #6366f1 0%, #ec4899 100%);
+  border-image-slice: 1;
+  padding: 24px 16px;
+}
+
+@media (max-width: 1180px) {
+  .section-container {
+    max-width: 85%;
+  }
+}
+
+@media (max-width: 960px) {
+  .section-container {
+    max-width: 100%;
+    padding: 20px 12px;
+  }
+}
+
+@media (max-width: 700px) {
+  .section-container {
+    padding: 16px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-container {
+    border-width: medium;
+    padding: 12px 8px;
+  }
 }
 </style>
 

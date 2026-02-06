@@ -26,6 +26,7 @@
   border-radius: 20px;
   right: 15%;
   justify-self: self-end;
+      margin-right: -5%;
 }
 
 .photo {
