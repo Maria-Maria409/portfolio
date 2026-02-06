@@ -4,21 +4,21 @@
       <div id="el" ref='vantaRef'></div>
     </div>
     <div class="hero-content">
-      <p class="hero-eyebrow">{{ $t('app.hero.eyebrow') }}</p>
-      <h1 class="hero-title">{{ $t('app.hero.title') }}</h1>
+      <p class="hero-eyebrow">Creative Developer</p>
+      <h1 class="hero-title">Hi, I'm Mariam Soudeni</h1>
       <p class="hero-description">
-        {{ $t('app.hero.description') }}
+        I'm a passionate web and mobile developer with five years of experience working across both front-end and back-end development. I specialize in creating responsive, modern, and user-friendly interfaces while also building scalable and efficient application logic. I love bringing ideas to life, solving problems with clean code, and continuously learning new technologies. My goal is to deliver high-quality digital products that are intuitive, reliable, and impactful for users.
       </p>
       <div class="hero-meta">
-        <span>{{ $t('app.hero.location') }}</span>
-        <span>{{ $t('app.hero.availability') }}</span>
+        <span>📍 Based in Tunisie</span>
+        <span>💼 Available for freelance projects / Full Time</span>
       </div>
       <div class="hero-actions">
         <v-btn color="primary" rounded="xl" class="px-6" @click="$emit('navigate', 'portfolio')">
-          {{ $t('app.hero.viewPortfolio') }}
+          View Portfolio
         </v-btn>
         <v-btn variant="outlined" color="primary" rounded="xl" class="px-6" @click="$emit('navigate', 'contact')">
-          {{ $t('app.hero.contactMe') }}
+          Contact Me
         </v-btn>
       </div>
     </div>

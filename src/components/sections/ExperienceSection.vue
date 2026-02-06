@@ -2,9 +2,9 @@
   <v-container class="section-container py-16" fluid>
     <v-container>
       <div class="text-center mb-12">
-        <h2 class="text-h3 font-weight-bold mb-4">{{ $t('experience.title') }}</h2>
+        <h2 class="text-h3 font-weight-bold mb-4">Work Experience</h2>
         <p class="text-body-1 text-medium-emphasis">
-          {{ $t('experience.subtitle') }}
+          My professional journey and career milestones
         </p>
       </div>
       <div class="custom-timeline">
@@ -25,10 +25,10 @@
             <div class="d-flex justify-space-between align-start mb-4">
               <div>
                 <h3 class="text-h5 font-weight-bold mb-2">
-                  {{ $t(`experience.${experience.id}.position`) }}
+                  {{ experience.position }}
                 </h3>
                 <h4 class="text-h6 text-primary mb-2">
-                  {{ $t(`experience.${experience.id}.company`) }}
+                  {{ experience.company }}
                 </h4>
                 <v-chip
                   size="small"
@@ -36,22 +36,22 @@
                   variant="flat"
                   class="mr-2"
                 >
-                  {{ $t(`experience.${experience.id}.period`) }}
+                  {{ experience.period }}
                 </v-chip>
                 <v-chip
-                  v-if="$t(`experience.${experience.id}.type`)"
+                  v-if="experience.type"
                   size="small"
                   color="secondary"
                   variant="flat"
                 >
-                  {{ $t(`experience.${experience.id}.type`) }}
+                  {{ experience.type }}
                 </v-chip>
               </div>
             </div>
 
             <p
               class="text-body-1 mb-4"
-              v-html="$t(`experience.${experience.id}.description`)"
+              v-html="experience.description"
             ></p>
 
             <div class="d-flex flex-wrap ga-2">
@@ -75,14 +75,29 @@
 const experiences = [
   {
     id: 'seniorFullStack',
+    position: ' Full-Stack Developer, Remotly',
+    company: 'Banana Navy',
+    period: '2021 - Present',
+    type: 'Full-time',
+    description: 'Developed a B2B networking mobile application using React Native and Nest.js.Designed automated RPA workflows using Robocorp.Built and deployed mobile-first apps with FlutterFlow.',
     technologies: ['Vue.js', 'Node.js', 'TypeScript', 'AWS', 'Docker', 'MongoDB'],
   },
   {
     id: 'fullStack',
+    position: ' Web Developer Intern',
+    company: 'Banana Sales Club',
+    period: '01/2022 – 06/2022',
+    type: 'Full-time',
+    description: 'Developed web applications using Vue.js, Vuetify, and Nuxt.js.<br>Contributed to a professional networking platform for sales professionals.<br>Implemented AI-powered recommendations, real-time notifications, and interactive networking tools.',
     technologies: ['React', 'Vue.js', 'Express', 'PostgreSQL', 'Redis'],
   },
   {
     id: 'frontend',
+    position: ' Web Developer Intern',
+    company: 'Mind Engineering',
+    period: ' 2019 – 2020',
+    type: 'Full-time',
+    description: 'Created and maintained responsive web applications, ensuring functionality across platforms.<br>Enhanced user interfaces with front-end frameworks to improve user experience.',
     technologies: ['JavaScript', 'React', 'CSS3', 'Sass', 'Webpack'],
   },
 ]

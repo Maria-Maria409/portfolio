@@ -2,9 +2,9 @@
   <v-container class="section-container py-16" fluid>
     <v-container>
       <div class="text-center mb-12">
-        <h2 class="text-h3 font-weight-bold mb-4">{{ $t('skills.title') }}</h2>
+        <h2 class="text-h3 font-weight-bold mb-4">Skills & Expertise</h2>
         <p class="text-body-1 text-medium-emphasis">
-          {{ $t('skills.subtitle') }}
+          Technologies and tools I work with
         </p>
       </div>
 
@@ -21,7 +21,7 @@
               <v-icon size="32" color="primary" class="mr-3">
                 {{ category.icon }}
               </v-icon>
-              <h3 class="text-h5 font-weight-bold">{{ $t(`skills.categories[${categoryIndex}].name`) }}</h3>
+              <h3 class="text-h5 font-weight-bold">{{ category.name }}</h3>
             </div>
 
             <v-row dense class="skill-grid">
@@ -55,24 +55,6 @@
           </v-card>
         </v-col>
       </v-row>
-
-  <!--     <v-row class="mt-8">
-        <v-col cols="12">
-          <h3 class="text-h5 font-weight-bold mb-6 text-center">{{ $t('skills.toolsTitle') }}</h3>
-          <div class="d-flex flex-wrap justify-center ga-3">
-            <v-chip
-              v-for="(tool, index) in tools"
-              :key="tool"
-              size="large"
-              color="primary"
-              variant="flat"
-              prepend-icon="mdi-check-circle"
-            >
-              {{ $t(`skills.tools[${index}]`) }}
-            </v-chip>
-          </div>
-        </v-col>
-      </v-row> -->
     </v-container>
   </v-container>
 </template>

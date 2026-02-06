@@ -11,7 +11,7 @@
           <div class="icon">
             <v-icon size="40">{{ item.icon }}</v-icon>
           </div>
-          <span class="text">{{ $t(`sidebarMenu.${item.id}`) }}</span>
+          <span class="text">{{ item.label }}</span>
         </a>
       </li>
     </ul>

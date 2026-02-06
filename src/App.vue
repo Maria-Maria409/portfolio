@@ -6,7 +6,7 @@
       height="64"
     >
       <v-app-bar-nav-icon @click="dialog = true" />
-      <v-toolbar-title class="font-weight-bold">{{ $t('app.portfolioTitle') }}</v-toolbar-title>
+      <v-toolbar-title class="font-weight-bold">Portfolio</v-toolbar-title>
     </v-app-bar>
 
     <MobileNavDialog v-model="dialog" @navigate="handleNavigation" />

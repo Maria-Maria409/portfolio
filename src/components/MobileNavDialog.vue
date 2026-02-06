@@ -35,7 +35,7 @@
           <div class="col-sm-6">
             <div class="detail">
               <div class="logo-name">
-                <h3 class="use-text-title">{{ $t('app.hero.title') }}</h3>
+                <h3 class="use-text-title">Hi, I'm Mariam Soudeni</h3>
                 <h4 class="use-text-subtitle">Full Stack Developer</h4>
                   <a class="btn-outlined primary waves-effect download" href="#" @click="dialog = false">Download CV</a>
               </div>
