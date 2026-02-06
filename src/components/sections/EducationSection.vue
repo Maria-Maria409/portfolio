@@ -49,7 +49,7 @@
         </v-col>
       </v-row>
 
-      <v-row class="mt-8">
+<!--       <v-row class="mt-8">
         <v-col cols="12">
           <h3 class="text-h5 font-weight-bold mb-6 text-center">Certifications</h3>
           <v-row>
@@ -75,7 +75,7 @@
             </v-col>
           </v-row>
         </v-col>
-      </v-row>
+      </v-row> -->
     </v-container>
   </v-container>
 </template>
@@ -100,8 +100,8 @@ const educations = [
 
 const certifications = [
   {
-    name: 'AWS Certified Solutions Architect',
-    issuer: 'Amazon Web Services',
+    name: 'NuxtJs',
+    //issuer: 'Amazon Web Services',
     date: '2022',
   },
   {

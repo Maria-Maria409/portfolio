@@ -87,7 +87,7 @@ const skillCategories = [
       { name: 'Express.js', level: 88 },
       { name: 'Python', level: 85 },
       { name: 'RESTful APIs', level: 92 },
-      { name: 'NestJs', level: 80 },
+      { name: 'Nest.js', level: 80 },
     ],
   },
   {

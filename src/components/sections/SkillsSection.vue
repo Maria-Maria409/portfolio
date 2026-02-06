@@ -136,9 +136,9 @@ const skillCategories = [
         logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg',
       },
       {
-        name: 'NestJs',
+        name: 'Nest.js',
         stack: 'Schema-driven data',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg',
+        logo: 'https://devicons.railway.com/i/nestjs.svg',
       },
     ],
   },
@@ -207,7 +207,7 @@ const skillCategories = [
       {
         name: 'Robocorp',
         stack: 'Research & prototyping',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/robocorp/robocorp-original.svg',
+        logo: 'https://imgs.search.brave.com/r-vLJIVDA5GIZFnJahydw4uc3sxrjDA-01T8r4ynO9Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2Vla2xvZ28u/Y29tL2xvZ28tcG5n/LzU2LzEvcm9ib2Nv/cnAtbG9nby1wbmdf/c2Vla2xvZ28tNTY2/NzkyLnBuZw',
       },
     ],
   },
