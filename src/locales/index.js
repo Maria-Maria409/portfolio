@@ -1,9 +1,179 @@
 import { createI18n } from "vue-i18n";
 
-import en from "./en.json";
-
-const messages = {
-  en: en,
+const en = {
+  message: {
+    hello: "Hello!",
+  },
+  experience: {
+    title: "Work Experience",
+    subtitle: "My professional journey and career milestones",
+    seniorFullStack: {
+      position: " Full-Stack Developer, Remotly",
+      company: "Banana Navy",
+      period: "2021 - Present",
+      type: "Full-time",
+      description:
+        "Developed a B2B networking mobile application using React Native and Nest.js.Designed automated RPA workflows using Robocorp.Built and deployed mobile-first apps with FlutterFlow.",
+    },
+    fullStack: {
+      position: " Web Developer Intern",
+      company: "Banana Sales Club",
+      period: "01/2022 – 06/2022",
+      type: "Full-time",
+      description:
+        "Developed web applications using Vue.js, Vuetify, and Nuxt.js.<br>Contributed to a professional networking platform for sales professionals.<br>Implemented AI-powered recommendations, real-time notifications, and interactive networking tools.",
+    },
+    frontend: {
+      position: " Web Developer Intern",
+      company: "Mind Engineering",
+      period: " 2019 – 2020",
+      type: "Full-time",
+      description:
+        "Created and maintained responsive web applications, ensuring functionality across platforms.<br>Enhanced user interfaces with front-end frameworks to improve user experience.",
+    },
+  },
+  app: {
+    portfolioTitle: "Portfolio",
+    hero: {
+      eyebrow: "Creative Developer",
+      title: "Hi, I'm Mariam Soudeni",
+      description:
+        "I'm a passionate web and mobile developer with five years of experience working across both front-end and back-end development. I specialize in creating responsive, modern, and user-friendly interfaces while also building scalable and efficient application logic. I love bringing ideas to life, solving problems with clean code, and continuously learning new technologies. My goal is to deliver high-quality digital products that are intuitive, reliable, and impactful for users.",
+      location: "📍 Based in Tunisie",
+      availability: "💼 Available for freelance projects / Full Time",
+      viewPortfolio: "View Portfolio",
+      contactMe: "Contact Me",
+    },
+  },
+  skills: {
+    title: "Skills & Expertise",
+    subtitle: "Technologies and tools I work with",
+    categories: [
+      {
+        name: "Frontend Development",
+        skills: [
+          {
+            name: "Vue.js",
+            stack: "SPA & SSR tooling",
+          },
+          {
+            name: "React",
+            stack: "Component architecture",
+          },
+          {
+            name: "JS/TS",
+            stack: "Modern ECMAScript",
+          },
+          {
+            name: "HTML / CSS",
+            stack: "Semantic & responsive layouts",
+          },
+          {
+            name: "Vuetify / MUI",
+            stack: "Design systems",
+          },
+        ],
+      },
+      {
+        name: "Backend Development",
+        skills: [
+          {
+            name: "Node.js",
+            stack: "Event-driven APIs",
+          },
+          {
+            name: "Express.js",
+            stack: "REST services",
+          },
+          {
+            name: "Python",
+            stack: "Automation & data",
+          },
+          {
+            name: "RESTful APIs",
+            stack: "OpenAPI & Swagger",
+          },
+          {
+            name: "GraphQL",
+            stack: "Schema-driven data",
+          },
+        ],
+      },
+      {
+        name: "Database & Cloud",
+        skills: [
+          {
+            name: "MongoDB",
+            stack: "Document stores",
+          },
+          {
+            name: "PostgreSQL",
+            stack: "Relational data",
+          },
+          {
+            name: "AWS",
+            stack: "Serverless & infra",
+          },
+          {
+            name: "Docker",
+            stack: "Containers & devops",
+          },
+          {
+            name: "Redis",
+            stack: "Caching layers",
+          },
+        ],
+      },
+      {
+        name: "Design & Tools",
+        skills: [
+          {
+            name: "UI / UX Design",
+            stack: "Research & prototyping",
+          },
+          {
+            name: "Figma",
+            stack: "Collaborative design",
+          },
+          {
+            name: "Adobe XD",
+            stack: "High-fidelity mockups",
+          },
+          {
+            name: "Git",
+            stack: "Version control",
+          },
+          {
+            name: "CI / CD",
+            stack: "Pipelines & automation",
+          },
+        ],
+      },
+    ],
+    toolsTitle: "Tools & Technologies",
+    tools: [
+      "Git",
+      "Docker",
+      "Kubernetes",
+      "Jenkins",
+      "Jira",
+      "Figma",
+      "VS Code",
+      "Postman",
+      "MongoDB Atlas",
+      "AWS S3",
+      "CloudFront",
+      "Lambda",
+    ],
+  },
+  sidebarMenu: {
+    experience: "Experience",
+    education: "Education",
+    certifications: "Certifications",
+    skills: "Skills",
+    portfolio: "Portfolio",
+    mail: "Mail",
+  },
 };
 
 export const i18n = createI18n({
@@ -11,5 +181,7 @@ export const i18n = createI18n({
   locale: "en",
   globalInjection: true,
   fallbackLocale: "en",
-  messages: messages,
+  messages: {
+    en,
+  },
 });
